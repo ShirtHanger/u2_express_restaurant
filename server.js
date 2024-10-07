@@ -48,7 +48,7 @@ three = {
     halal: true
 }]
 const entrees = [one = { 
-    id: 1,
+    id: 4,
     name: 'Jerk chicken',
     catagory: 'entree',
     cuisineType: 'Jamaican',
@@ -60,7 +60,7 @@ const entrees = [one = {
     halal: true
 },
 two = { 
-    id: 2,
+    id: 5,
     name: 'Gimbap',
     catagory: 'entree',
     cuisineType: 'Korean',
@@ -72,7 +72,7 @@ two = {
     halal: false
 },
 three = { 
-    id: 3,
+    id: 6,
     name: '	Popiah',
     catagory: 'entree',
     cuisineType: 'Chinese',
@@ -84,7 +84,7 @@ three = {
     halal: false
 }]
 const desserts = [one = { 
-    id: 1,
+    id: 7,
     name: 'Greek Yogurt Bagel w/ Banana',
     catagory: 'dessert',
     cuisineType: 'Greek',
@@ -96,7 +96,7 @@ const desserts = [one = {
     halal: true
 },
 two = { 
-    id: 2,
+    id: 8,
     name: 'Mandazi Pudding',
     catagory: 'dessert',
     cuisineType: 'Ugandan',
@@ -108,7 +108,7 @@ two = {
     halal: true
 },
 three = { 
-    id: 3,
+    id: 9,
     name: 'Chinsukō biscuits',
     catagory: 'dessert',
     cuisineType: 'Japanese',
@@ -120,7 +120,7 @@ three = {
     halal: true
 },
 four = { 
-    id: 4,
+    id: 10,
     name: 'Rum Cake',
     cuisineType: 'Caribbean',
     description: 'Dried fruit is soaked in rum for months and then added to dough prepared with sugar which has been caramelized by boiling in water',
@@ -144,6 +144,8 @@ app.get('/Entrees', (req, res) => {
 app.get('/Desserts', (req, res) => {
     res.send(desserts)})
 
+app.get('/full-menu', (req, res) => {
+    res.send(allMeals)})
 
 
 app.get('/vegan', (req, res) => {
@@ -153,7 +155,7 @@ app.get('/vegan', (req, res) => {
             veganFoods.push(meal)
     }
     }
-    res.send(halalFoods)
+    res.send(veganFoods)
 })
 
 app.get('/halal', (req, res) => {
